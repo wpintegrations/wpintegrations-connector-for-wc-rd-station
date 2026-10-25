@@ -1,0 +1,27 @@
+{
+	"name": "wpintegrations-connector-for-wc-rd-station",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Admin app for the WPIntegrations Connector for WooCommerce and RD Station",
+	"scripts": {
+		"build": "vite build",
+		"zip": "bash bin/build.sh",
+		"dev": "vite",
+		"start": "vite",
+		"lint:js": "wp-scripts lint-js resources/js",
+		"format": "prettier --write resources/js",
+		"format:check": "prettier --check resources/js"
+	},
+	"dependencies": {
+		"@ant-design/icons": "^5.3.7",
+		"antd": "^5.21.6",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "^4.3.4",
+		"@wordpress/scripts": "^27.9.0",
+		"prettier": "npm:wp-prettier@^3.0.3",
+		"vite": "^6.0.0"
+	}
+}

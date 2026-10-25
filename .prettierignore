@@ -1,0 +1,6 @@
+node_modules/
+vendor/
+build/
+languages/
+package-lock.json
+pnpm-lock.yaml

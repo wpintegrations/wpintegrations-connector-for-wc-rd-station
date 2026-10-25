@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="WPIntegrations Connector for WooCommerce and RD Station">
+  <circle cx="128" cy="128" r="128" fill="#16234B"/>
+
+  <!-- Form card -->
+  <rect x="64.5" y="56.8" width="95.2" height="104.8" rx="11.9" fill="#FFFFFF"/>
+
+  <!-- Field rows; the first carries the accent so the mark keeps its colour
+       even where the badge is cropped. -->
+  <rect x="80.4" y="72.7" width="43.1" height="8.7" rx="4.35" fill="#00C2A8"/>
+  <rect x="80.4" y="93.3" width="52.6" height="8.7" rx="4.35" fill="#D6DEEE"/>
+  <rect x="80.4" y="113.9" width="27.9" height="8.7" rx="4.35" fill="#D6DEEE"/>
+
+  <!-- Send badge -->
+  <circle cx="172.4" cy="161.6" r="39.7" fill="#00C2A8"/>
+  <rect x="155.9" y="158.5" width="22.7" height="6.2" rx="3.1" fill="#FFFFFF"/>
+  <polygon points="172.8,148.8 190.1,161.6 172.8,174.4" fill="#FFFFFF"/>
+</svg>

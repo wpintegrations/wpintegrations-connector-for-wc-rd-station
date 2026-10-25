@@ -1,0 +1,235 @@
+/**
+ * wp-admin's forms.css styles inputs with attribute selectors that outrank
+ * Ant Design's single-class ones, so WP borders, heights and focus rings
+ * bleed into antd widgets. These rules load only on the plugin's own page
+ * and re-assert the antd look with higher specificity.
+ */
+
+/* Select / AutoComplete search input: antd wants it borderless, but WP gives
+   it a box, adding a second border that overflows the 32px selector. */
+.ant-select .ant-select-selection-search-input,
+.ant-select .ant-select-selection-search-input:focus {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Full-page layout: drop wp-admin's left gutter and paint the content area
+   white, so the app covers the page instead of floating on the grey canvas. */
+#wpcontent {
+  padding-left: 0;
+  background: #fff;
+}
+#wpbody-content {
+  padding-bottom: 0;
+}
+#wpi_wcrds-admin-root {
+  min-height: calc(100vh - 120px);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* Fixed overlays like Drawer start at top: 0, under the admin bar. Offset by
+   its height (32px, 46px on narrow screens) to keep the header visible. */
+body.admin-bar .ant-drawer {
+  top: 32px;
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar .ant-drawer {
+    top: 46px;
+  }
+}
+
+/* antd's message API only supports top placement, which fights the admin bar,
+   so pin toasts bottom-right. !important because antd's CSS-in-JS is injected
+   after this stylesheet. */
+.ant-message {
+  top: auto !important;
+  bottom: 24px !important;
+  left: auto !important;
+  right: 24px !important;
+  width: auto !important;
+  max-width: calc(100% - 48px);
+}
+.ant-message .ant-message-notice-wrapper,
+.ant-message .ant-message-notice {
+  text-align: right !important;
+}
+
+/* Brand loader: the lockup breathing in place of a page that has no data yet. */
+.wpi-brand-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+.wpi-brand-loader__lockup {
+  width: 400px;
+  max-width: 60%;
+  height: auto;
+  animation: wpi-brand-breathe 1.6s ease-in-out infinite;
+}
+@keyframes wpi-brand-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+/* Motion is decoration here, so drop it and hold the dimmed state. */
+@media (prefers-reduced-motion: reduce) {
+  .wpi-brand-loader__lockup {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+/* Visible to screen readers only: the lockup itself says nothing about waiting. */
+.wpi-brand-loader__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Standalone <Input>: restore antd's border, padding and focus ring. */
+input.ant-input.ant-input {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  box-shadow: none;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.88);
+  min-height: 0;
+  padding: 4px 11px;
+  line-height: 1.5714285714285714;
+}
+input.ant-input.ant-input:focus {
+  border-color: #2271b1;
+  box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.1);
+  outline: none;
+}
+
+/* Affix wrappers (Input.Password, prefixes/suffixes) draw the border
+   themselves, so the inner input must stay bare. */
+.ant-input-affix-wrapper > input.ant-input,
+.ant-input-affix-wrapper > input.ant-input:focus {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+  min-height: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+/* InputNumber: the outer .ant-input-number draws the border. */
+.ant-input-number input.ant-input-number-input,
+.ant-input-number input.ant-input-number-input:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+  min-height: 0;
+  padding: 4px 11px;
+  line-height: inherit;
+}
+
+/* The Pro card on Settings: brand navy, so it stands apart from the form. */
+.wpi-pro-card {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #16234b;
+  color: #fff;
+}
+
+.wpi-pro-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wpi-pro-card__badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #00c2a8;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.wpi-pro-card__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wpi-pro-card__lead {
+  margin: 12px 0 16px;
+  color: #e6ebf5;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.wpi-pro-card__list {
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.wpi-pro-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.wpi-pro-card__check {
+  flex: none;
+  margin-top: 4px;
+  color: #00c2a8;
+}
+
+.wpi-pro-card__cta,
+.wpi-pro-card__cta:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 8px;
+  background: #00c2a8;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.wpi-pro-card__cta:hover,
+.wpi-pro-card__cta:focus {
+  background: #00a892;
+  color: #fff;
+}
+
+.wpi-pro-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}

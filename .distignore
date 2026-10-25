@@ -1,0 +1,41 @@
+# Excluded from the distributed/deployed plugin zip.
+#
+# Keep in step with .gitignore. Anything private that git ignores has to be
+# listed here too — git not tracking a file is no protection at all once the
+# zip is built straight from the working directory.
+.distignore
+.gitignore
+.git
+.github
+.claude
+# Icon, banner and screenshots. These belong in the /assets directory of the
+# WordPress.org SVN repo, which is published beside the plugin rather than
+# inside it — shipping them in the zip would add weight every user downloads
+# for images only the directory listing ever shows.
+.wordpress-org
+# The company brand kit. Source assets shared across every WPIntegrations
+# plugin — what a plugin actually uses is copied into it, not loaded from here.
+brand
+node_modules
+# resources/, package.json and vite.config.mjs ship on purpose: build/ is
+# compiled, and the directory's human-readable-code guideline wants the
+# corresponding source and build recipe in the package when the repo is not
+# public. Only the lockfiles and installed deps stay out.
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+webpack.config.js
+hot
+phpcs.xml.dist
+composer.json
+composer.lock
+bin
+dist
+vendor
+workdrive
+.prettierrc
+.prettierignore
+.editorconfig
+.env
+.env.*
+*.md
