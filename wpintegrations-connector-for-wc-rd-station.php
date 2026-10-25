@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       WPIntegrations Connector for WooCommerce and RD Station
- * Plugin URI:        https://wpintegrations.net/plugins/connect-woocommerce-to-rd-station/
+ * Plugin URI:        https://wpintegrations.net/plugins/
  * Description:       Send WooCommerce orders to RD Station Marketing as conversion events, with field mapping, LGPD consent and lead attribution. Not affiliated with WooCommerce or RD Station.
  * Version:           1.0.0
  * Requires at least: 6.2

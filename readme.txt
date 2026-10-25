@@ -41,7 +41,7 @@ Send WooCommerce orders to RD Station Marketing as conversion events, with field
 * Tags, funnel stage, lead owner and the opportunity flag
 * A delivery queue that retries failed sends automatically
 
-[Learn more about the Pro version](https://wpintegrations.net/plugins/connect-woocommerce-to-rd-station/)
+[Learn more about the Pro version](https://wpintegrations.net/plugins/)
 
 = Source code and third-party libraries =
 
