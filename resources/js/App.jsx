@@ -43,7 +43,7 @@ export default function App() {
               marginBottom: 4
             }}
           >
-            Connector for WooCommerce and RD Station
+            Connector with RD Station for WooCommerce
           </h1>
           <p style={{ color: '#646970', marginTop: 0 }}>
             Send WooCommerce orders to RD Station Marketing.

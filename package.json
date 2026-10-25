@@ -2,7 +2,7 @@
 	"name": "wpintegrations-connector-for-wc-rd-station",
 	"version": "1.0.0",
 	"private": true,
-	"description": "Admin app for the WPIntegrations Connector for WooCommerce and RD Station",
+	"description": "Admin app for the WPIntegrations Connector with RD Station for WooCommerce",
 	"scripts": {
 		"build": "vite build",
 		"zip": "bash bin/build.sh",

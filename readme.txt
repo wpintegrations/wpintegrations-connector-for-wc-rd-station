@@ -1,4 +1,4 @@
-=== WPIntegrations Connector for WooCommerce and RD Station ===
+=== WPIntegrations Connector with RD Station for WooCommerce ===
 Contributors: wpintegrations
 Tags: rd station, woocommerce, leads, orders, conversions
 Requires at least: 6.2
